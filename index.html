@@ -15,16 +15,28 @@
 	left: 2px;
 	width: 770px;
 	height: 570px;
-	border: 1px solid blue;	
-	background-color: rgba(255, 255, 255, 0.75);
+	color: white;
+	background-color: rgba(255, 255, 255, 0.0);
 	padding: 10px;
 	user-select: none;
 	font-family: "Rounded Mplus 1c";
 	font-size: 18pt;
+
+	text-shadow: 2px 2px 1px black,
+    -2px 2px 1px black,
+    2px -2px 1px black,
+    -2px -2px 1px black;
 }
 </style>
     </head>
     <body>
+
+		<!--BGMの読み込み表-->
+		<audio id="BGM1" src="Sound/bgm_maoudamashii_cyber19.mp3" loop></audio>
+		<audio id="BGM2" src="Sound/bgm_maoudamashii_cyber21.mp3" loop></audio>
+		<audio id="BGM3" src="Sound/bgm_maoudamashii_cyber39.mp3" loop></audio>
+		<audio id="BGM4" src="Sound/bgm_maoudamashii_cyber40.mp3" loop></audio>
+		<audio id="BGM5" src="Sound/game_maoudamashii_5_town27.mp3" loop></audio>
 
         <div id="canvas">
 	        <div id="serif"></div>
@@ -35,6 +47,7 @@
 
         var SCENARIO = [
 	      {com:"BG", val:"url(./image/sky001.jpg)"}
+		, {com:"SOUBG",  val:"BGM1"}
 	    , {com:"S",  val:"今日はとてもいい天気だ。<br>"}
 		, {com:"S",  val:"こんな日はとてもいいことが起こりそうだと人々は言うだろう。<br>"}
 		, {com:"S",  val:"そんな気候とは裏腹に、私の腹具合は大荒れであった。<br>"}
@@ -43,11 +56,13 @@
 		, {com:"S",  val:"それともアイスを調子に乗って5個も食べたからだろうか。<br>"}
 		, {com:"S",  val:"考えても仕方がない、一刻も早くトイレに入らなければ。<br>"}
 		, {com:"S",  val:"そう思った私は、公衆トイレのある公園へ向かうことにした。<br>"}
-		//,{com:"BG", val:"url(./image/交差点)"}
 		, {com:"CL",  val:""}
+		, {com:"SOUBG",  val:"BGM2"}
+		,{com:"BG", val:"url(./image/Residential_area.png)"}
 		, {com:"S",  val:"歩き始めて少し経ったが、どうにも腹の痛みは増すばかりだ。<br>"}
 		, {com:"S",  val:"だいたいはトイレに行く途中で一度腹痛が治まったりするものだが、今回はそうではない。<br>"}
 		, {com:"S",  val:"今までにない状況で、焦りも出てきた。<br>"}
+		,{com:"BG", val:"url(./image/Intersection.png)"}
 		, {com:"S",  val:"一心不乱に歩いていると交差点に着いた。<br>"}
 		, {com:"S",  val:"公園に行くには、ここの交差点を含めて3つの信号を越えなければならない。<br>"}
 		, {com:"S",  val:"上を見上げると、信号の色は赤だった。<br>"}
@@ -58,6 +73,7 @@
 		, {com:"S",  val:"その時間は永遠にも感じられる。<br>"}
 		, {com:"S",  val:"そんなできれば味わいたくない経験。<br>"}
 		, {com:"CL",  val:""}
+		, {com:"SOUBG",  val:"BGM1"}
 		, {com:"S",  val:"今まさに、私はそう言った状況にあるのだ。<br>"}
 		, {com:"S",  val:"ただでさえ長い赤信号が、さらに長く感じる。<br>"}
 		, {com:"S",  val:"私はひたすらに別のことを、週末に何をして過ごすかなどを考えながら待った。<br>"}
@@ -67,6 +83,7 @@
 		, {com:"S",  val:"道の長さも、信号に引っかかる前提で約1分くらいのものである。<br>"}
 		, {com:"S",  val:"車が来ないか見渡して確認し、交差点を後にした。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Park.png)"}
 		, {com:"S",  val:"公園にたどり着く。<br>"}
 		, {com:"S",  val:"私は急いで公衆トイレへと向かう。<br>"}
 		, {com:"S",  val:"「故障中、使用不可」<br>"}
@@ -78,6 +95,7 @@
 		, {com:"S",  val:"他人の家のトイレを使わせてもらうのはどうか。<br>"}
 		, {com:"S",  val:"いや、それも無しだ。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Residential_area_Thief.png)"}
 		, {com:"S",  val:"最近、この辺でトイレを借りるふりをして盗みを働く狼藉者がいるらしい。<br>"}
 		, {com:"S",  val:"町内会の回覧板にそんな紙が入っていた。<br>"}
 		, {com:"S",  val:"私は近所付き合いがそこまで良いほうではない。<br>"}
@@ -88,6 +106,7 @@
 		, {com:"S",  val:"泥棒と疑われることと、トイレを借りるためになりふり構わずインターホンを鳴らすこと。<br>"}
 		, {com:"S",  val:"そのどちらもしたくないのだ。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Park.png)"}
 		, {com:"S",  val:"残る選択は一つしかない。<br>"}
 		, {com:"S",  val:"ここから一切の問題がなく、一番近いトイレは―<br>"}
 		, {com:"S",  val:"<h3>―自宅のトイレだ。</h3><br>"}
@@ -95,6 +114,7 @@
 		, {com:"S",  val:"何より期待していた分、気も力も緩んでいたため、躊躇っている暇がない。<br>"}
 		, {com:"S",  val:"私は自宅に向かって歩き始めた。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Residential_area.png)"}
 		, {com:"S",  val:"歩き始めて7分ほど経っただろうか。<br>"}
 		, {com:"S",  val:"すでに自宅が見え始めた。<br>"}
 		, {com:"S",  val:"今日は両親ともに出かけている。<br>"}
@@ -103,6 +123,7 @@
 		, {com:"S",  val:"鞄の中にある鍵をまだ家に着かないうちにポケットに入れる。<br>"}
 		, {com:"S",  val:"そのまま家に到着し、鍵を開けようとした時だった。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Residential_area_middleLady.png)"}
 		, {com:"S",  val:"「あら、○○君じゃない！お帰りなさい～」<br>"}
 		, {com:"S",  val:"このおばさんはとても話好きで、よく母と毎日2時間くらい話し込んでいるらしい。<br>"}
 		, {com:"S",  val:"話も面白く、ユーモアのある人物であるとわたしは判断している。<br>"}
@@ -131,6 +152,7 @@
 		, {com:"S",  val:"私が何かするでもなく、話は急に終わった。<br>"}
 		, {com:"S",  val:"腹痛が酷かったためか、尋常ではない量の冷や汗をかいていたようだ。<br>"}
 		, {com:"S",  val:"私は軽く頭を下げた後、急いで鍵を開け、家に入った。<br>"}
+		,{com:"BG", val:"url(./image/House.png)"}
 		, {com:"S",  val:"私は一目散にトイレに入り、悪夢と決別しようとした。<br>"}
 		, {com:"S",  val:"よくもこんなに苦しめやがって、などと心の中で毒づいたのがいけなかったのだろうか。<br>"}
 		, {com:"S",  val:"幸か不幸か、紙がないことに便座に座る直前に気が付いた。<br>"}
@@ -168,6 +190,7 @@
 		, {com:"S",  val:"どうやら、父が収納にしまい忘れたらしく、リビングに置きっぱなしになっていた。<br>"}
 		, {com:"S",  val:"私はロールを半ばもぎ取るように取り出し、決戦の地へと向かった。<br>"}
 		, {com:"CL",  val:""}
+		,{com:"BG", val:"url(./image/Night.png)"}
 		, {com:"S",  val:"事なきを得た私は今日のことを振り返った。<br>"}
 		, {com:"S",  val:"腹痛に始まり、信号に止められたこと、公園のトイレが故障していたこと。<br>"}
 		, {com:"S",  val:"この辺に泥棒が潜んでいること、おばさんの対策を考えたこと。<br>"}
@@ -181,6 +204,7 @@
         ];
 
 		var scenariotext = "";
+		var bgm_id = "BGM1";
 
         var Novel = {
     	  cursor: 0
@@ -207,6 +231,20 @@
 				$("#canvas").css("background-image", SCENARIO[this.cursor].val);
 				this.cursor++;
 				Novel.play();
+				break;
+
+				// BGM変更
+			    case "SOUBG":
+				document.getElementById(bgm_id).pause();
+				document.getElementById(bgm_id).currentTime = 0;
+				bgm_id = SCENARIO[this.cursor].val
+				document.getElementById(bgm_id).play();
+				this.cursor++;
+				Novel.play();
+				break;
+
+				// SE追加
+			    case "SOUSE":
 				break;
 
 				// textを消す
