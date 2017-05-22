@@ -37,6 +37,10 @@
 		<audio id="BGM3" src="Sound/bgm_maoudamashii_cyber39.mp3" loop></audio>
 		<audio id="BGM4" src="Sound/bgm_maoudamashii_cyber40.mp3" loop></audio>
 		<audio id="BGM5" src="Sound/game_maoudamashii_5_town27.mp3" loop></audio>
+    <audio id="BGM6" src="Sound/game_maoudamashii_6_dangeon19.mp3" loop></audio>
+    <audio id="BGM7" src="Sound/game_maoudamashii_6_dangeon20.mp3" loop></audio>
+    <audio id="BGM8" src="Sound/game_maoudamashii_6_dangeon17.mp3" loop></audio>
+
 
         <div id="canvas">
 	        <div id="serif"></div>
@@ -47,9 +51,10 @@
 
         var SCENARIO = [
 	      {com:"BG", val:"url(./image/sky001.jpg)"}
-		, {com:"SOUBG",  val:"BGM1"}
+		, {com:"SOUBG",  val:"BGM5"}
 	    , {com:"S",  val:"今日はとてもいい天気だ。<br>"}
 		, {com:"S",  val:"こんな日はとてもいいことが起こりそうだと人々は言うだろう。<br>"}
+    , {com:"SOUBG",  val:"BGM1"}
 		, {com:"S",  val:"そんな気候とは裏腹に、私の腹具合は大荒れであった。<br>"}
 		, {com:"S",  val:"何が原因なのだろうか。<br>"}
 		, {com:"S",  val:"薄着をしていたせいだろうか。<br>"}
@@ -57,8 +62,8 @@
 		, {com:"S",  val:"考えても仕方がない、一刻も早くトイレに入らなければ。<br>"}
 		, {com:"S",  val:"そう思った私は、公衆トイレのある公園へ向かうことにした。<br>"}
 		, {com:"CL",  val:""}
-		, {com:"SOUBG",  val:"BGM2"}
 		,{com:"BG", val:"url(./image/Residential_area.png)"}
+    , {com:"SOUBG",  val:"BGM2"}
 		, {com:"S",  val:"歩き始めて少し経ったが、どうにも腹の痛みは増すばかりだ。<br>"}
 		, {com:"S",  val:"だいたいはトイレに行く途中で一度腹痛が治まったりするものだが、今回はそうではない。<br>"}
 		, {com:"S",  val:"今までにない状況で、焦りも出てきた。<br>"}
@@ -73,7 +78,6 @@
 		, {com:"S",  val:"その時間は永遠にも感じられる。<br>"}
 		, {com:"S",  val:"そんなできれば味わいたくない経験。<br>"}
 		, {com:"CL",  val:""}
-		, {com:"SOUBG",  val:"BGM1"}
 		, {com:"S",  val:"今まさに、私はそう言った状況にあるのだ。<br>"}
 		, {com:"S",  val:"ただでさえ長い赤信号が、さらに長く感じる。<br>"}
 		, {com:"S",  val:"私はひたすらに別のことを、週末に何をして過ごすかなどを考えながら待った。<br>"}
@@ -84,6 +88,7 @@
 		, {com:"S",  val:"車が来ないか見渡して確認し、交差点を後にした。<br>"}
 		, {com:"CL",  val:""}
 		,{com:"BG", val:"url(./image/Park.png)"}
+    , {com:"SOUBG",  val:"BGM3"}
 		, {com:"S",  val:"公園にたどり着く。<br>"}
 		, {com:"S",  val:"私は急いで公衆トイレへと向かう。<br>"}
 		, {com:"S",  val:"「故障中、使用不可」<br>"}
@@ -96,6 +101,7 @@
 		, {com:"S",  val:"いや、それも無しだ。<br>"}
 		, {com:"CL",  val:""}
 		,{com:"BG", val:"url(./image/Residential_area_Thief.png)"}
+    , {com:"SOUBG",  val:"BGM2"}
 		, {com:"S",  val:"最近、この辺でトイレを借りるふりをして盗みを働く狼藉者がいるらしい。<br>"}
 		, {com:"S",  val:"町内会の回覧板にそんな紙が入っていた。<br>"}
 		, {com:"S",  val:"私は近所付き合いがそこまで良いほうではない。<br>"}
@@ -115,6 +121,7 @@
 		, {com:"S",  val:"私は自宅に向かって歩き始めた。<br>"}
 		, {com:"CL",  val:""}
 		,{com:"BG", val:"url(./image/Residential_area.png)"}
+    , {com:"SOUBG",  val:"BGM4"}
 		, {com:"S",  val:"歩き始めて7分ほど経っただろうか。<br>"}
 		, {com:"S",  val:"すでに自宅が見え始めた。<br>"}
 		, {com:"S",  val:"今日は両親ともに出かけている。<br>"}
@@ -124,6 +131,7 @@
 		, {com:"S",  val:"そのまま家に到着し、鍵を開けようとした時だった。<br>"}
 		, {com:"CL",  val:""}
 		,{com:"BG", val:"url(./image/Residential_area_middleLady.png)"}
+    , {com:"SOUBG",  val:"BGM1"}
 		, {com:"S",  val:"「あら、○○君じゃない！お帰りなさい～」<br>"}
 		, {com:"S",  val:"このおばさんはとても話好きで、よく母と毎日2時間くらい話し込んでいるらしい。<br>"}
 		, {com:"S",  val:"話も面白く、ユーモアのある人物であるとわたしは判断している。<br>"}
@@ -154,6 +162,7 @@
 		, {com:"S",  val:"私は軽く頭を下げた後、急いで鍵を開け、家に入った。<br>"}
 		,{com:"BG", val:"url(./image/House.png)"}
 		, {com:"S",  val:"私は一目散にトイレに入り、悪夢と決別しようとした。<br>"}
+    , {com:"SOUBG",  val:"BGM6"}
 		, {com:"S",  val:"よくもこんなに苦しめやがって、などと心の中で毒づいたのがいけなかったのだろうか。<br>"}
 		, {com:"S",  val:"幸か不幸か、紙がないことに便座に座る直前に気が付いた。<br>"}
 		, {com:"S",  val:"全身から汗がどっと噴き出る。<br>"}
@@ -171,6 +180,7 @@
 		, {com:"S",  val:"そして、予感は的中する。<br>"}
 		, {com:"CL",  val:""}
 		, {com:"S",  val:"こちらにも、紙は、無かった。<br>"}
+    , {com:"SOUBG",  val:"BGM8"}
 		, {com:"S",  val:"このとき、私は脳をフル回転させた。<br>"}
 		, {com:"S",  val:"我が家では紙は買った後に、どこにしまっているか。<br>"}
 		, {com:"S",  val:"しばらく日用品の買い物に付き合っていないため、答えが出ない。<br>"}
@@ -178,6 +188,7 @@
 		, {com:"S",  val:"ここからなら廊下の収納スペースが近い。<br>"}
 		, {com:"S",  val:"頻繁に使うため、奥にしまい込んでいる可能性も低いはずだ。<br>"}
 		, {com:"S",  val:"収納スペースにたどり着いた私は、中を探すが―<br>"}
+    , {com:"SOUBG",  val:"BGM7"}
 		, {com:"S",  val:"<h3>―無かった。</h3><br>"}
 		, {com:"S",  val:"ついでに言えば物置の中にも無かった。<br>"}
 		, {com:"S",  val:"何処にあるのか全く分からず、絶望感と共に、怒りもこみあげてきた。<br>"}
@@ -191,6 +202,7 @@
 		, {com:"S",  val:"私はロールを半ばもぎ取るように取り出し、決戦の地へと向かった。<br>"}
 		, {com:"CL",  val:""}
 		,{com:"BG", val:"url(./image/Night.png)"}
+    , {com:"SOUBG",  val:"BGM5"}
 		, {com:"S",  val:"事なきを得た私は今日のことを振り返った。<br>"}
 		, {com:"S",  val:"腹痛に始まり、信号に止められたこと、公園のトイレが故障していたこと。<br>"}
 		, {com:"S",  val:"この辺に泥棒が潜んでいること、おばさんの対策を考えたこと。<br>"}
@@ -254,7 +266,7 @@
 				this.cursor++;
 				Novel.play();
 				break;
-			
+
 			    default:
 				break;
 		}
@@ -263,7 +275,7 @@
 
 $(document).ready(function(){
 	Novel.init();
-	
+
 	$("#serif")
 		.on("click", function(){
 			Novel.play();
