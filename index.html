@@ -216,7 +216,8 @@
 		, {com:"S",  val:"薄着はまだしも、アイスは1日1個にしよう。<br>"}
 		, {com:"S",  val:"この日に自分にそう誓った。<br>"}
 		, {com:"CL",  val:""}
-		, {com:"S",  val:"<br><br><br><br><br><br><h1>　　　　　　　END</h1><br>"}
+		, {com:"S",  val:"<br><br><br><br><br><br><h1>　　　　　　　END</h1><br>クリックでタイトルにもどる"}
+		, {com:"BACK",  val:""}
         ];
 
 		var scenariotext = "";
@@ -227,8 +228,8 @@
     	, max: 0
     	, init: function(){
         //　セリフ文
-		this.max = SCENARIO.length;
-		this.play();
+			this.max = SCENARIO.length;
+			this.play();
     	}
     	, play: function(){
     		if( this.cursor >= this.max ){
@@ -269,6 +270,13 @@
 				$("#serif").html("　");
 				this.cursor++;
 				Novel.play();
+				break;
+
+				case "BACK":
+				scenariotext = " ";
+				$("#serif").html("　");
+				this.cursor = 1;
+				this.play();
 				break;
 
 			    default:
